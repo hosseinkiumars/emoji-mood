@@ -19,13 +19,13 @@ const App = () => {
   }, []);
 
   const fetchUsers = async () => {
-    const response = await axios.get('http://localhost:5000/users');
+    const response = await axios.get('http://127.0.0.1:5000/users');
     setUsers(response.data);
   };
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { name, password });
+      const response = await axios.post('http://127.0.0.1:5000/login', { name, password });
       setCurrentEmoji(response.data.emoji);
       setLoggedIn(true);
     } catch {
@@ -34,7 +34,7 @@ const App = () => {
   };
 
   const handleEmojiSubmit = async () => {
-    await axios.post('http://localhost:5000/update_emoji', { name, emoji: currentEmoji });
+    await axios.post('http://127.0.0.1:5000/update_emoji', { name, emoji: currentEmoji });
     fetchUsers();  // Update the emoji list after submission
   };
 
