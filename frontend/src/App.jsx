@@ -141,12 +141,14 @@ const App = () => {
             ))}
           </List> */}
           <Grid Container spacing={2} alignItems="center" justifyContent="center">
-            {users.map(user => (
-              <Grid item xs={12} sm={6} md={4} lg={2} key={user.name} sx={{display:'flex', flexDirection:'row', alignItems:"center", justifyContent:"center"}}>
+            <Grid item xs={12} sm={6} md={4} lg={2} sx={{display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
+              {users.map(user => (
+                <Box key={user.name} padding={0}>
                   <Typography color='text.main' variant='h5'>{user.name}</Typography>
-                  <Typography color='text.main' variant='h1'>{user.emoji}</Typography>T
-              </Grid>
-            ))}
+                  <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
+                </Box>
+              ))}
+            </Grid>
           </Grid>
         </Container>
       </Box>
