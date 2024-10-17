@@ -106,7 +106,7 @@ const App = () => {
             </>
           ) : (
             <>
-              <Typography variant="h6" gutterBottom>Select your emoji:</Typography>
+              <Typography variant="p" gutterBottom>Select your emoji:</Typography>
               {/* <List sx={{display:'flex'}}>
                 {emojis.map(emoji => (
                   <ListItem key={emoji} button onClick={() => setCurrentEmoji(emoji)}>
@@ -122,7 +122,9 @@ const App = () => {
                       fullWidth
                       onClick={() => {
                         setCurrentEmoji(emoji);
-                        handleEmojiSubmit(); // Submit when emoji button is clicked
+                        setTimeout(() => {
+                          handleEmojiSubmit(); // Submit after 100ms
+                        }, 100); // 100ms delay
                       }}
                     >
                       {emoji}
@@ -134,7 +136,7 @@ const App = () => {
           )}
         </Container>
         
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="p" >Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
@@ -146,9 +148,10 @@ const App = () => {
           <Grid container spacing={2} alignItems="center" justifyContent="center" >
             {users.map((user) => (
               <Grid item xs={6} sm={6} md={3} lg={3} key={user.name}>
-                <Box sx={{ display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center" }}></Box>
-                <Typography color='text.main' variant='h5'>{user.name}</Typography>
-                <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
+                <Box sx={{ display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center" }}>
+                  <Typography color='text.main' variant='h5'>{user.name}</Typography>
+                  <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
+                </Box>
               </Grid>
             ))}
           </Grid>
