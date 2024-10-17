@@ -44,13 +44,13 @@ const App = () => {
   }, []);
 
   const fetchUsers = async () => {
-    const response = await axios.get('https://127.0.0.1:5000/users');
+    const response = await axios.get('https://mood.muses.ir/api/users');
     setUsers(response.data);
   };
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://127.0.0.1:5000/login', { name, password });
+      const response = await axios.post('https://mood.muses.ir/api/login', { name, password });
       setCurrentEmoji(response.data.emoji);
       setLoggedIn(true);
     } catch {
@@ -59,7 +59,7 @@ const App = () => {
   };
 
   const handleEmojiSubmit = async () => {
-    await axios.post('https://127.0.0.1:5000/update_emoji', { name, emoji: currentEmoji });
+    await axios.post('https://mood.muses.ir/api/update_emoji', { name, emoji: currentEmoji });
     fetchUsers();  // Update the emoji list after submission
   };
 
