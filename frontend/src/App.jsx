@@ -120,19 +120,21 @@ const App = () => {
                     <Button
                       variant="outlined"
                       fullWidth
-                      onClick={() => setCurrentEmoji(emoji)}
+                      onClick={() => {
+                        setCurrentEmoji(emoji);
+                        handleEmojiSubmit(); // Submit when emoji button is clicked
+                      }}
                     >
                       {emoji}
                     </Button>
                   </Grid>
                 ))}
               </Grid>
-              <Button variant="contained" onClick={handleEmojiSubmit} sx={{ marginTop:'8px'}}>Submit Emoji</Button>
             </>
           )}
         </Container>
         
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="p" >Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
@@ -141,9 +143,10 @@ const App = () => {
               </ListItem>
             ))}
           </List> */}
-          <Grid container spacing={2} alignItems="center" justifyContent="center" direction="row">
+          <Grid container spacing={2} alignItems="center" justifyContent="center" >
             {users.map((user) => (
-              <Grid item xs={6} sm={6} md={3} lg={3} key={user.name} alignItems="center" justifyContent="center">
+              <Grid item xs={6} sm={6} md={3} lg={3} key={user.name}>
+                <Box sx={{ display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center" }}></Box>
                 <Typography color='text.main' variant='h5'>{user.name}</Typography>
                 <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
               </Grid>
