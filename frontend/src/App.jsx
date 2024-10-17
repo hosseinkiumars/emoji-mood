@@ -40,12 +40,22 @@ const App = () => {
 
   useEffect(() => {
     fetchUsers();
+    const intervalId = setInterval(fetchUsers, 5000); // Polling every 5 seconds
+  
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
   }, []);
+  
 
   const fetchUsers = async () => {
-    const response = await axios.get('https://mood.muses.ir/api/users');
-    setUsers(response.data);
+    try {
+      const response = await axios.get('https://mood.muses.ir/api/users');
+      setUsers(response.data);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
   };
+  
 
   const handleLogin = async () => {
     try {
@@ -67,7 +77,7 @@ const App = () => {
       <CssBaseline /> {/* Resets the CSS baseline */}
 
       <Box sx={{ backgroundColor: '#4F709C', minHeight: '100vh', padding: '8px' }}>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 0px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography>
           
           {!loggedIn ? (
