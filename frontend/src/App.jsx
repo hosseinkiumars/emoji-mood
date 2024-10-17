@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Button, TextField, List, ListItem, ListItemText, Typography, IconButton, Box, Grid } from '@mui/material';
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import { Container, Button, TextField, List, ListItem, ListItemText, Typography, Box, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';  // To reset the CSS baseline for consistent styling
 
@@ -68,7 +67,7 @@ const App = () => {
       <CssBaseline /> {/* Resets the CSS baseline */}
 
       <Box sx={{ backgroundColor: '#4F709C', minHeight: '100vh', padding: '8px' }}>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 0px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography>
           
           {!loggedIn ? (
@@ -107,7 +106,7 @@ const App = () => {
             </>
           ) : (
             <>
-              <Typography variant="h6">Select your emoji:</Typography>
+              <Typography variant="h6" gutterBottom>Select your emoji:</Typography>
               {/* <List sx={{display:'flex'}}>
                 {emojis.map(emoji => (
                   <ListItem key={emoji} button onClick={() => setCurrentEmoji(emoji)}>
@@ -128,7 +127,7 @@ const App = () => {
                   </Grid>
                 ))}
               </Grid>
-              <Button variant="contained" onClick={handleEmojiSubmit}>Submit Emoji</Button>
+              <Button variant="contained" onClick={handleEmojiSubmit} sx={{ marginTop:'8px'}}>Submit Emoji</Button>
             </>
           )}
         </Container>
@@ -142,7 +141,7 @@ const App = () => {
               </ListItem>
             ))}
           </List> */}
-          <Grid Container spacing={2} alignItems="center" justifyContent="center" direction="row">
+          <Grid container spacing={2} alignItems="center" justifyContent="center" direction="row">
             {users.map((user) => (
               <Grid item xs={6} sm={6} md={3} lg={3} key={user.name} alignItems="center" justifyContent="center">
                 <Typography color='text.main' variant='h5'>{user.name}</Typography>
