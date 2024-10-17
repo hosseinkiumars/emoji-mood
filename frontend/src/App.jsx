@@ -51,7 +51,7 @@ const App = () => {
       ) : (
         <>
           <Typography variant="h6">Select your emoji:</Typography>
-          <List>
+          <List sx={{display:'flex'}}>
             {emojis.map(emoji => (
               <ListItem key={emoji} button onClick={() => setCurrentEmoji(emoji)}>
                 <ListItemText primary={emoji} />
