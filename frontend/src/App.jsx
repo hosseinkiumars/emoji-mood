@@ -68,7 +68,7 @@ const App = () => {
       <CssBaseline /> {/* Resets the CSS baseline */}
 
       <Box sx={{ backgroundColor: '#4F709C', minHeight: '100vh', padding: '8px' }}>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood Tracker 😀</Typography>
           
           {!loggedIn ? (
@@ -131,7 +131,9 @@ const App = () => {
               <Button variant="contained" onClick={handleEmojiSubmit}>Submit Emoji</Button>
             </>
           )}
-
+        </Container>
+        
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="h6" gutterBottom>Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
