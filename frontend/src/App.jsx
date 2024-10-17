@@ -131,8 +131,8 @@ const App = () => {
           <Grid Container spacing={2} alignItems="center" justifyContent="center">
             {users.map(user => (
               <Grid item xs={12} sm={6} md={4}>
-                  <typography color='text.main' variant={h5} primary={`${user.name}:`} />
-                  <typography color='text.main' variant={h1} primary={`${user.emoji}`} />
+                  <typography color='text.main' variant='h5' primary={`${user.name}:`} />
+                  <typography color='text.main' variant='h1' primary={`${user.emoji}`} />
               </Grid>
             ))}
           </Grid>
