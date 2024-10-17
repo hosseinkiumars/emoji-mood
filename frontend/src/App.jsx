@@ -108,34 +108,46 @@ const App = () => {
           ) : (
             <>
               <Typography variant="h6">Select your emoji:</Typography>
-              <List sx={{display:'flex'}}>
+              {/* <List sx={{display:'flex'}}>
                 {emojis.map(emoji => (
                   <ListItem key={emoji} button onClick={() => setCurrentEmoji(emoji)}>
                     <ListItemText primary={emoji} />
                   </ListItem>
                 ))}
-              </List>
+              </List> */}
+              <Grid container spacing={2}>
+                {emojis.map((emoji) => (
+                  <Grid item xs={2} key={emoji}> {/* Adjust the 'xs' value to control the grid width */}
+                    <Button
+                      variant="outlined"
+                      fullWidth
+                      onClick={() => setCurrentEmoji(emoji)}
+                    >
+                      {emoji}
+                    </Button>
+                  </Grid>
+                ))}
+              </Grid>
               <Button variant="contained" onClick={handleEmojiSubmit}>Submit Emoji</Button>
             </>
           )}
 
           <Typography variant="h6" gutterBottom>Users and their current mood:</Typography>
-          <List>
+          {/* <List>
             {users.map(user => (
               <ListItem key={user.name}>
                 <ListItemText primary={`${user.name}: ${user.emoji}`} />
-                {/* <IconButton><EmojiEmotionsIcon /></IconButton> */}
               </ListItem>
             ))}
-          </List>
-          {/* <Grid Container spacing={2} alignItems="center" justifyContent="center">
+          </List> */}
+          <Grid Container spacing={2} alignItems="center" justifyContent="center">
             {users.map(user => (
-              <Grid item xs={12} sm={6} md={4} key={user.name}>
-                  <typography color='text.main' variant='h5' primary={`${user.name}:`} />
-                  <typography color='text.main' variant='h1' primary={`${user.emoji}`} />
+              <Grid item xs={12} sm={6} md={4} key={user.name} sx={{display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
+                  <Typography color='text.main' variant='h5'>{user.name}</Typography>
+                  <Typography color='text.main' variant='h1'>{user.emoji}</Typography>T
               </Grid>
             ))}
-          </Grid> */}
+          </Grid>
         </Container>
       </Box>
     </ThemeProvider>
