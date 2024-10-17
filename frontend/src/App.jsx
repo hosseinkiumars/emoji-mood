@@ -30,7 +30,7 @@ const theme = createTheme({
 });
 
 
-const emojis = ['😀', '😐', '😔', '😎', '😡', '😇', '🤔', '😒'];
+const emojis = ['😀', '😐', '😔', '😎', '😡', '😇', '🤔', '😒', '😢', '🤣', '😫', '🥱', '🤯'];
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -69,12 +69,12 @@ const App = () => {
 
       <Box sx={{ backgroundColor: '#4F709C', minHeight: '100vh', padding: '8px' }}>
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
-          <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood Tracker 😀</Typography>
+          <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography>
           
           {!loggedIn ? (
             <>
               <Grid container spacing={1} alignItems="center" justifyContent="center">
-                <Grid item xs={12} sm={6} md={4} sx={{ height:'32px' }}>
+                <Grid item xs={12} sm={6} md={4}>
                   <TextField 
                     label="Name" 
                     value={name} 
@@ -83,7 +83,7 @@ const App = () => {
                     margin="normal" 
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} sx={{ height:'32px' }}>
+                <Grid item xs={12} sm={6} md={4}>
                   <TextField 
                     label="Password" 
                     type="password" 
@@ -93,7 +93,7 @@ const App = () => {
                     margin="normal" 
                   />
                 </Grid>
-                <Grid item xs={10} sm={4} md={2} sx={{ height:'32px' }}>
+                <Grid item xs={10} sm={4} md={2}>
                   <Button 
                     bgcolor='primary.main'
                     variant="contained" 
@@ -134,7 +134,7 @@ const App = () => {
         </Container>
         
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '8px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
-          <Typography variant="p" gutterBottom>Users and their current mood:</Typography>
+          <Typography variant="p" >Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
               <ListItem key={user.name}>
