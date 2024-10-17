@@ -57,8 +57,8 @@ const App = () => {
     }
   };
 
-  const handleEmojiSubmit = async () => {
-    await axios.post('https://mood.muses.ir/api/update_emoji', { name, emoji: currentEmoji });
+  const handleEmojiSubmit = async (emoji) => {
+    await axios.post('https://mood.muses.ir/api/update_emoji', { name, emoji });
     fetchUsers();  // Update the emoji list after submission
   };
 
@@ -123,7 +123,7 @@ const App = () => {
                       onClick={() => {
                         setCurrentEmoji(emoji);
                         setTimeout(() => {
-                          handleEmojiSubmit(); // Submit after 100ms
+                          handleEmojiSubmit(emoji); // Submit after 100ms
                         }, 100); // 100ms delay
                       }}
                     >
