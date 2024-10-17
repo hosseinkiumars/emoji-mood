@@ -117,7 +117,7 @@ const App = () => {
               </List> */}
               <Grid container spacing={2} alignItems="center" justifyContent="center">
                 {emojis.map((emoji) => (
-                  <Grid item xs={2} key={emoji}> {/* Adjust the 'xs' value to control the grid width */}
+                  <Grid item xs={4} sm={3} md={2} lg={1} key={emoji}> {/* Adjust the 'xs' value to control the grid width */}
                     <Button
                       variant="outlined"
                       fullWidth
@@ -141,14 +141,12 @@ const App = () => {
             ))}
           </List> */}
           <Grid Container spacing={2} alignItems="center" justifyContent="center">
-            <Grid item xs={12} sm={6} md={4} lg={2} sx={{display:'flex', flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
-              {users.map(user => (
-                <Box key={user.name} padding={0}>
+            {users.map(user => (
+              <Grid item xs={4} sm={3} md={2} lg={1} key={user.name} sx={{ alignItems:"center", justifyContent:"center"}}>
                   <Typography color='text.main' variant='h5'>{user.name}</Typography>
                   <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
-                </Box>
-              ))}
-            </Grid>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>
