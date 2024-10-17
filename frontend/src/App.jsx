@@ -120,22 +120,22 @@ const App = () => {
           )}
 
           <Typography variant="h6" gutterBottom>Users and their current mood:</Typography>
-          {/* <List>
+          <List>
             {users.map(user => (
               <ListItem key={user.name}>
                 <ListItemText primary={`${user.name}: ${user.emoji}`} />
-                <IconButton><EmojiEmotionsIcon /></IconButton>
+                {/* <IconButton><EmojiEmotionsIcon /></IconButton> */}
               </ListItem>
             ))}
-          </List> */}
-          <Grid Container spacing={2} alignItems="center" justifyContent="center">
+          </List>
+          {/* <Grid Container spacing={2} alignItems="center" justifyContent="center">
             {users.map(user => (
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} key={user.name}>
                   <typography color='text.main' variant='h5' primary={`${user.name}:`} />
                   <typography color='text.main' variant='h1' primary={`${user.emoji}`} />
               </Grid>
             ))}
-          </Grid>
+          </Grid> */}
         </Container>
       </Box>
     </ThemeProvider>
