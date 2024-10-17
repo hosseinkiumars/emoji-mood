@@ -30,7 +30,7 @@ const theme = createTheme({
 });
 
 
-const emojis = ['😀', '😐', '😔', '😎', '😡', '😇', '🤔', '😒', '😢', '🤣', '😫', '🥱', '🤯'];
+const emojis = ['😀', '😐', '😔', '😎', '😡', '😇', '🤔', '😒', '😢', '🤣', '😫', '🥱'];
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -117,7 +117,7 @@ const App = () => {
               </List> */}
               <Grid container spacing={2} alignItems="center" justifyContent="center">
                 {emojis.map((emoji) => (
-                  <Grid item xs={4} sm={3} md={2} lg={1} key={emoji}> {/* Adjust the 'xs' value to control the grid width */}
+                  <Grid item xs={3} sm={3} md={2} lg={1} key={emoji}> {/* Adjust the 'xs' value to control the grid width */}
                     <Button
                       variant="outlined"
                       fullWidth
@@ -142,9 +142,9 @@ const App = () => {
               </ListItem>
             ))}
           </List> */}
-          <Grid Container spacing={2} alignItems="center" justifyContent="center">
+          <Grid Container spacing={2} alignItems="center" justifyContent="center" direction="row">
             {users.map((user) => (
-              <Grid item xs={3} sm={2} md={1} lg={1} key={user.name}>
+              <Grid item xs={6} sm={6} md={3} lg={3} key={user.name} alignItems="center" justifyContent="center">
                 <Typography color='text.main' variant='h5'>{user.name}</Typography>
                 <Typography color='text.main' variant='h1'>{user.emoji}</Typography>
               </Grid>
