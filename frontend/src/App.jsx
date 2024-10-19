@@ -11,16 +11,17 @@ import CssBaseline from '@mui/material/CssBaseline';  // To reset the CSS baseli
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#E5D283',
+      main: '#F675A8',
     },
     secondary: {
-      main: '#4F709C',
+      main: '#F29393',
     },
     background: {
-      main: '#F0F0F0',
+      main: '#554994',
+      2: '#FFCCB3',
     },
     text: {
-      main: '#213555',
+      main: '#00000',
     },
   },
   typography: {
@@ -80,8 +81,8 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Resets the CSS baseline */}
 
-      <Box sx={{ backgroundColor: 'gray', minHeight: '100vh', padding: '8px' }}>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+      <Box sx={{ backgroundColor: 'background.main', minHeight: '100vh', padding: '8px' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px', borderRadius: '8px', backgroundColor: 'background.2' }}>
           {/* <Typography variant="h6" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography> */}
           
           {!loggedIn ? (
@@ -153,7 +154,7 @@ const App = () => {
           )}
         </Container>
         
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'none' }}>
           <Typography variant="p" >Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
