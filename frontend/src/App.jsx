@@ -76,9 +76,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Resets the CSS baseline */}
 
-      <Box sx={{ backgroundColor: '#4F709C', minHeight: '100vh', padding: '8px' }}>
+      <Box sx={{ backgroundColor: 'gray', minHeight: '100vh', padding: '8px' }}>
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
-          <Typography variant="h4" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography>
+          {/* <Typography variant="h6" color='text.main' gutterBottom>😁 Emoji Mood 😀</Typography> */}
           
           {!loggedIn ? (
             <>
@@ -90,6 +90,7 @@ const App = () => {
                     onChange={(e) => setName(e.target.value)} 
                     fullWidth 
                     margin="normal" 
+                    size='small'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -100,6 +101,7 @@ const App = () => {
                     onChange={(e) => setPassword(e.target.value)} 
                     fullWidth 
                     margin="normal" 
+                    size='small'
                   />
                 </Grid>
                 <Grid item xs={10} sm={4} md={2}>
@@ -108,6 +110,7 @@ const App = () => {
                     variant="contained" 
                     onClick={handleLogin} 
                     fullWidth
+                    size='small'
                   >
                     Login
                   </Button>
@@ -146,7 +149,7 @@ const App = () => {
           )}
         </Container>
         
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16px 0px', marginTop:'8px', borderRadius: '8px', backgroundColor: 'background.main' }}>
           <Typography variant="p" >Users and their current mood:</Typography>
           {/* <List>
             {users.map(user => (
